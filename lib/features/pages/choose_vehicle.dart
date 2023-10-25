@@ -20,7 +20,7 @@ class _ChooseVehiclePageState extends State<ChooseVehiclePage> {
   void getPolyPoints() async {
     PolylinePoints polylinePoints = PolylinePoints();
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
-        'AIzaSyAd4rEAQqf58fCJGABqw99teDP9BcuyN88',
+        'API_KEY',
         PointLatLng(sourceLocation.latitude, destination.longitude),
         PointLatLng(destination.latitude, destination.longitude));
     if (result.points.isNotEmpty) {
