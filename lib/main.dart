@@ -13,15 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(395, 832),
-      child: MaterialApp(
+      designSize: const Size(375, 812),
+      builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'SWIPHR TEST',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: ChooseVehiclePage(),
+        home: const ChooseVehiclePage(),
       ),
     );
   }

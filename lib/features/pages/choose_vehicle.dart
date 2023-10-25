@@ -1,7 +1,6 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:swiphr_test/features/widget/screen%201/header_widget.dart';
 import 'package:swiphr_test/features/widget/screen%201/location_box.dart';
@@ -15,10 +14,8 @@ class ChooseVehiclePage extends StatefulWidget {
 }
 
 class _ChooseVehiclePageState extends State<ChooseVehiclePage> {
-  final Completer<GoogleMapController> _controller = Completer();
   static const LatLng sourceLocation = LatLng(30.14690, -1.92856);
   static const LatLng destination = LatLng(30.15020, -1.92925);
-  Set<Polyline> _polyline = {};
   List<LatLng> polylineCoordinates = [];
   void getPolyPoints() async {
     PolylinePoints polylinePoints = PolylinePoints();
@@ -27,11 +24,11 @@ class _ChooseVehiclePageState extends State<ChooseVehiclePage> {
         PointLatLng(sourceLocation.latitude, destination.longitude),
         PointLatLng(destination.latitude, destination.longitude));
     if (result.points.isNotEmpty) {
-      result.points.forEach(
-        (PointLatLng point) => polylineCoordinates.add(
+      for (var point in result.points) {
+        polylineCoordinates.add(
           LatLng(point.latitude, point.longitude),
-        ),
-      );
+        );
+      }
       setState(() {});
     }
   }
@@ -49,7 +46,8 @@ class _ChooseVehiclePageState extends State<ChooseVehiclePage> {
         child: Stack(
           children: [
             SizedBox(
-              height: 800,
+              width: 469.w,
+              height: 712.h,
               child: GoogleMap(
                 initialCameraPosition:
                     const CameraPosition(target: sourceLocation, zoom: 16),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiphr_test/features/widget/screen%202/body_box.dart';
 import 'package:swiphr_test/features/widget/screen%202/header2.dart';
-import 'package:swiphr_test/features/widget/screen%202/star_rate_box.dart';
 
 class RateTrip extends StatelessWidget {
   const RateTrip({super.key});
@@ -13,10 +13,12 @@ class RateTrip extends StatelessWidget {
         child: Stack(
           children: [
             Container(
+              width: 375.w,
+              height: 812.h,
               decoration: const BoxDecoration(color: Color(0xff8F00FF)),
             ),
-            Header2(),
-            RateYourRide(),
+            const Header2(),
+            const RateYourRide(),
           ],
         ),
       ),

@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:swiphr_test/features/pages/rate_trip.dart';
 import 'package:swiphr_test/features/widget/screen%201/button.dart';
 import 'package:swiphr_test/features/widget/screen%201/circled_box.dart';
@@ -13,7 +13,8 @@ class RideOrderBox extends StatelessWidget {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
-        height: 500,
+        width: 376.w,
+        height: 373.h,
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(40),
@@ -28,19 +29,17 @@ class RideOrderBox extends StatelessWidget {
             ]),
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.all(30.0),
+            Padding(
+              padding: const EdgeInsets.all(30.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Choose your ride',
-                    style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontSize: 25,
-                        fontWeight: FontWeight.w500),
+                    style: GoogleFonts.poppins(
+                        fontSize: 18.sp, fontWeight: FontWeight.w600),
                   ),
-                  CircledBox(
+                  const CircledBox(
                     color: Colors.white,
                     icon: Icons.chevron_left_outlined,
                     iconColor: Colors.black,
@@ -69,24 +68,24 @@ class RideOrderBox extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => RateTrip()),
+                          MaterialPageRoute(
+                              builder: (context) => const RateTrip()),
                         );
                       },
-                      title: const Text(
+                      title: Text(
                         'Toyota Camry',
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w500),
+                        style: GoogleFonts.poppins(
+                            fontSize: 14.sp, fontWeight: FontWeight.w500),
                       ),
-                      subtitle: const Text(
+                      subtitle: Text(
                         '2 - 3 person',
-                        style:
-                            TextStyle(color: Color(0xff656565), fontSize: 17),
+                        style: GoogleFonts.poppins(
+                            color: const Color(0xff656565), fontSize: 12.sp),
                       ),
-                      trailing: const Text(
+                      trailing: Text(
                         "\$7,00",
-                        style: TextStyle(fontSize: 18, color: Colors.black),
+                        style: GoogleFonts.poppins(
+                            fontSize: 16.sp, color: Colors.black),
                       ),
                     );
                   },
@@ -94,7 +93,8 @@ class RideOrderBox extends StatelessWidget {
               ),
             ),
             Container(
-              height: 180,
+              width: 375.w,
+              height: 150.h,
               decoration: const BoxDecoration(color: Colors.white, boxShadow: [
                 BoxShadow(
                     color: Color.fromARGB(15, 0, 0, 0),
@@ -111,11 +111,9 @@ class RideOrderBox extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            const Text('Cash',
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w400)),
+                            Text('Cash',
+                                style: GoogleFonts.poppins(
+                                    fontSize: 20, fontWeight: FontWeight.w400)),
                             const SizedBox(
                               width: 5,
                             ),
@@ -157,9 +155,43 @@ class RideOrderBox extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 20.0),
-                    child: Button(),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20.0),
+                    child: Button(
+                      content: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 8.0, left: 30.0, bottom: 8.0),
+                              child: Text(
+                                'Book this car',
+                                style: GoogleFonts.poppins(
+                                    color: Colors.white, fontSize: 16.sp),
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  '\$9,00',
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 16.sp, color: Colors.white),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(right: 20.0),
+                                  child: CircledBox(
+                                      color: Colors.white,
+                                      icon: Icons.chevron_right_outlined,
+                                      boxShadow: [],
+                                      iconColor: Colors.black),
+                                ),
+                              ],
+                            )
+                          ]),
+                    ),
                   )
                 ],
               ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TripRoad extends StatelessWidget {
   const TripRoad({super.key});
@@ -9,8 +11,8 @@ class TripRoad extends StatelessWidget {
       left: 50,
       top: 120,
       child: Container(
-        width: 450,
-        height: 120,
+        width: 302.w,
+        height: 83.h,
         decoration: BoxDecoration(
             color: Colors.white60, borderRadius: BorderRadius.circular(20)),
         child: Stack(children: [
@@ -21,14 +23,14 @@ class TripRoad extends StatelessWidget {
               child: Row(
                 children: [
                   Container(
-                    height: 24,
-                    width: 24,
+                    height: 16.w,
+                    width: 16.h,
                     decoration: const BoxDecoration(
                         color: Color(0xff8F00FF), shape: BoxShape.circle),
                     child: Center(
                       child: Container(
-                        height: 11,
-                        width: 11,
+                        height: 8.w,
+                        width: 8.h,
                         decoration: const BoxDecoration(
                             color: Colors.white, shape: BoxShape.circle),
                       ),
@@ -37,9 +39,10 @@ class TripRoad extends StatelessWidget {
                   const SizedBox(
                     width: 8,
                   ),
-                  const Text(
+                  Text(
                     'Skate Park',
-                    style: TextStyle(fontSize: 20, color: Colors.grey),
+                    style: GoogleFonts.poppins(
+                        fontSize: 14.sp, color: Colors.grey),
                   ),
                 ],
               ),
@@ -87,23 +90,24 @@ class TripRoad extends StatelessWidget {
               ]),
             ),
           ),
-          const Align(
+          Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(15.0),
               child: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.location_pin,
                     color: Colors.red,
                     size: 30,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 6,
                   ),
                   Text(
                     'Home',
-                    style: TextStyle(fontSize: 20, color: Color(0xff656565)),
+                    style: GoogleFonts.poppins(
+                        fontSize: 14.sp, color: const Color(0xff656565)),
                   ),
                 ],
               ),

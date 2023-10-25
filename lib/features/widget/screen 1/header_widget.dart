@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:swiphr_test/features/utils/utils.dart';
 import 'package:swiphr_test/features/widget/screen%201/circled_box.dart';
 
@@ -16,15 +17,15 @@ class Header extends StatelessWidget {
             color: purpleColor,
             icon: Icons.menu_rounded,
             iconColor: Colors.white,
-            boxShadow: [],
+            boxShadow: const [],
           ),
           SizedBox(
-              width: 60,
-              height: 40,
+              width: 45.23.w,
+              height: 30.h,
               child: Image.asset('assets/logo.png', fit: BoxFit.fill)),
           SizedBox(
-            width: 50,
-            height: 50,
+            width: 40.w,
+            height: 40.h,
             child: Image.asset('assets/profile1.png', fit: BoxFit.fill),
           )
         ],
